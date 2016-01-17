@@ -13,7 +13,7 @@ namespace SMTS_WebApi.Models
         public string JobRequiredYearExperience { get; set; }
         public string JobLocation { get; set; }
         public string JobDescription { get; set; }
-        public DateTime JobLastDate { get; set; }
+        public DateTime? JobLastDate { get; set; }
         public string JobKeySkills { get; set; }
         public string JobSalary { get; set; }
         public string JobIndustry { get; set; }
@@ -21,8 +21,8 @@ namespace SMTS_WebApi.Models
         public string JobRole { get; set; }
         public string JobQualification { get; set; }
         public string JobCompanyProfile { get; set; }
-        public DateTime JobPostedDate { get; set; }
+        public DateTime? JobPostedDate { get; set; }
         public string JobCompanyImage { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
     }
 }

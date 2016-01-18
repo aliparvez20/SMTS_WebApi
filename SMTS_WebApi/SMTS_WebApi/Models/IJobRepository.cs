@@ -9,7 +9,7 @@ namespace SMTS_WebApi.Models
     public interface IJobRepository
     {
         List<Job> GetAllJob();
-
+        Job GetJobById(int JobId);
 
     }
 }

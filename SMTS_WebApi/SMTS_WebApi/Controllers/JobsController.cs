@@ -18,10 +18,15 @@ namespace SMTS_WebApi.Controllers
             return repository.GetAllJob();
         }
 
-        // GET: api/Jobs/5
-        public string Get(int id)
+        // GET: api/Jobs?JobId=1
+        public Job Get(string JobId)
         {
-            return "value";
+            Job job = repository.GetJobById(Convert.ToInt32(JobId));
+            if (job == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return job;
         }
 
         // POST: api/Jobs

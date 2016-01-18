@@ -13,11 +13,13 @@ namespace SMTS_WebApi.Controllers
     public class ProductsController : ApiController
     {
         // GET: api/Products
-        public IEnumerable<Product> Get()
+        public IEnumerable<Product> GetAllJobPost()
         {
             ProductRepository productRepository = new ProductRepository();
             return productRepository.Retrieve();
         }
+
+        
 
         // GET: api/Products/5
         public IEnumerable<Product> Get(string search)

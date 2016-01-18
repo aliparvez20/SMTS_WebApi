@@ -10,6 +10,8 @@ namespace SMTS_WebApi.Models
     {
         List<Job> GetAllJob();
         Job GetJobById(int JobId);
-
+        void InsertJob(Job job);
+        void UpdateJob(Job job);
+        void DeleteJob(int JobId);
     }
 }

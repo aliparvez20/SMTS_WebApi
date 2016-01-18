@@ -10,7 +10,6 @@ namespace SMTS_WebApi.Controllers
 {
     public class JobsController : ApiController
     {
-        //IJobRepository repository = new JobRepository();
         static readonly IJobRepository repository = new JobRepository();
         // GET: api/Jobs
         public IEnumerable<Job> Get()
@@ -19,9 +18,9 @@ namespace SMTS_WebApi.Controllers
         }
 
         // GET: api/Jobs?JobId=1
-        public Job Get(string JobId)
+        public Job Get(int JobId)
         {
-            Job job = repository.GetJobById(Convert.ToInt32(JobId));
+            Job job = repository.GetJobById(JobId);
             if (job == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -29,19 +28,24 @@ namespace SMTS_WebApi.Controllers
             return job;
         }
 
-        // POST: api/Jobs
-        public void Post([FromBody]string value)
+        // POST FOR INSERT: api/Jobs
+        //public void Post([FromBody]string value)
+        public void Post(Job job)
         {
+            repository.InsertJob(job);
         }
 
-        // PUT: api/Jobs/5
+        // PUT FOR UPDATE: api/Jobs/5
         public void Put(int id, [FromBody]string value)
         {
+            Job job = new Job();
+            repository.UpdateJob(job);
         }
 
         // DELETE: api/Jobs/5
-        public void Delete(int id)
+        public void Delete(int JobId)
         {
+            repository.DeleteJob(JobId);
         }
     }
 }

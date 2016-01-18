@@ -250,5 +250,22 @@ namespace SMTS_WebApi.Models
 
 
 
+
+
+        public void InsertJob(Job job)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateJob(Job job)
+        {
+            throw new NotImplementedException();
+        }
+
+        //sp_DeleteJobById
+        public void DeleteJob(int JobId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -261,11 +261,27 @@ namespace SMTS_WebApi.Models
         {
             throw new NotImplementedException();
         }
-
-        //sp_DeleteJobById
-        public void DeleteJob(int JobId)
+        
+        public int DeleteJob(int JobId)
         {
-            throw new NotImplementedException();
+            int DeletedRow = 0;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_DeleteJobById", connection))
+                {
+                    connection.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    SqlParameter param = new SqlParameter();
+                    param.ParameterName = "@JobId";
+                    param.Value = JobId;
+                    
+                    cmd.Parameters.Add(param);
+
+                    DeletedRow = cmd.ExecuteNonQuery();
+                }
+            }
+            return DeletedRow;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace SMTS_WebApi.Controllers
     public class JobsController : ApiController
     {
         static readonly IJobRepository repository = new JobRepository();
+
         // GET: api/Jobs
         public IEnumerable<Job> Get()
         {
@@ -43,9 +44,9 @@ namespace SMTS_WebApi.Controllers
         }
 
         // DELETE: api/Jobs/5
-        public void Delete(int JobId)
+        public int Delete(int JobId)
         {
-            repository.DeleteJob(JobId);
+            return repository.DeleteJob(JobId);
         }
     }
 }

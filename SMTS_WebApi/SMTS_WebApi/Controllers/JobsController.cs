@@ -33,13 +33,13 @@ namespace SMTS_WebApi.Controllers
         //public void Post([FromBody]string value)
         public void Post(Job job)
         {
+
             repository.InsertJob(job);
         }
 
         // PUT FOR UPDATE: api/Jobs/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int JobId, Job job)
         {
-            Job job = new Job();
             repository.UpdateJob(job);
         }
 

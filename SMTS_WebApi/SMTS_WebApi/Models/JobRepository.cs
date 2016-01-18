@@ -244,14 +244,6 @@ namespace SMTS_WebApi.Models
         //    myConnection.Close();
         //}  
 
-
-
-
-
-
-
-
-
         public void InsertJob(Job job)
         {
             throw new NotImplementedException();

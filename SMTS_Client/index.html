@@ -607,7 +607,7 @@
         </div>
         <!--=== End Header ===-->
         <!--=== Slider ===-->
-        <div class="slider-inner">
+        <!--<div class="slider-inner">
             <div id="da-slider" class="da-slider">
                 <div class="da-slide">
                     <h2><i>CLEAN &amp; FRESH</i> <br /> <i>FULLY RESPONSIVE</i> <br /> <i>DESIGN</i></h2>
@@ -631,9 +631,10 @@
                     <span class="da-arrows-next"></span>
                 </div>
             </div>
-        </div><!--/slider-->
+        </div>--><!--/slider-->
         <!--=== End Slider ===-->
-        <div ng-include="'app/home/home.html'"></div>
+        <!--<div ng-include="'app/home/home.html'"></div>-->
+        <ng-view></ng-view>
         <!--=== Footer Version 1 ===-->
         <div class="footer-v1">
             <div class="footer">
@@ -782,8 +783,19 @@
     <!-- Library Scripts -->
     <script src="scripts/angular.js"></script>
     <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+
+
+
+
     <!-- Application Script -->
     <script src="app/app.js"></script>
+    <script src="app/home/homeCtrl.js"></script>
+    <script src="app/home/homeDrct.js"></script>
+    <script src="commen/homeService.js"></script>
+
+    <script src="app/contact/contactCtrl.js"></script>
+    <script src="app/contact/contactDrct.js"></script>
 
     <!-- Services -->
     <script src="commen/commen.service.js"></script>

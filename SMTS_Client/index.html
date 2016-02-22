@@ -34,7 +34,7 @@
 </head>
 
 <body ng-app="Container">
-    <div class="wrapper">
+    <div class="wrapper" ng-controller="IndexController">
         <!--=== Header ===-->
         <div class="header">
             <!-- Topbar -->
@@ -574,16 +574,16 @@
                             <!-- End Blog -->
                             <!-- Contacts -->
                             <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="javascript:void(0);" ng-click="contact();" class="dropdown-toggle" data-toggle="dropdown">
                                     Contacts
                                 </a>
-                                <ul class="dropdown-menu">
+                                <!--<ul class="dropdown-menu">
                                     <li><a href="page_contact1.html">Contacts Default</a></li>
                                     <li><a href="page_contact_advanced.php">Contacts Advanced</a></li>
                                     <li><a href="page_contact2.html">Contacts Option 1</a></li>
                                     <li><a href="page_contact3.html">Contacts Option 2</a></li>
                                     <li><a href="page_contact4.html">Contacts Option 3</a></li>
-                                </ul>
+                                </ul>-->
                             </li>
                             <!-- End Contacts -->
                             <!-- Search Block -->
@@ -631,7 +631,8 @@
                     <span class="da-arrows-next"></span>
                 </div>
             </div>
-        </div>--><!--/slider-->
+        </div>-->
+        <!--/slider-->
         <!--=== End Slider ===-->
         <!--<div ng-include="'app/home/home.html'"></div>-->
         <ng-view></ng-view>
@@ -767,13 +768,7 @@
     <!-- JS Page Level -->
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="assets/js/plugins/parallax-slider.js"></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-      	App.init();
-        App.initSliders();
-        ParallaxSlider.initParallaxSlider();
-    });
-    </script>
+    
     <!--[if lt IE 9]>
         <script src="assets/plugins/respond.js"></script>
         <script src="assets/plugins/html5shiv.js"></script>
@@ -790,18 +785,19 @@
 
     <!-- Application Script -->
     <script src="app/app.js"></script>
+    <!--home-->
     <script src="app/home/homeCtrl.js"></script>
     <script src="app/home/homeDrct.js"></script>
     <script src="commen/homeService.js"></script>
-
+    <!--contact-->
     <script src="app/contact/contactCtrl.js"></script>
-    <script src="app/contact/contactDrct.js"></script>
+    <!--<script src="app/contact/contactDrct.js"></script>-->
 
     <!-- Services -->
     <script src="commen/commen.service.js"></script>
     <script src="commen/productResource.js"></script>
     <!-- Product Controllers -->
-    <!--<script src="app/products/productListCtrl.js"></script>-->
+    
 
 </body>
 </html>

@@ -5,3 +5,6 @@ SMTS_WebApi/SMTS_WebApi/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 SMTS_WebApi/SMTS_WebApi.v12.suo
 *.suo
 *.cache
+*.suo
+*.cache
+SMTS_WebApi/SMTS_WebApi/Scripts/_references.js

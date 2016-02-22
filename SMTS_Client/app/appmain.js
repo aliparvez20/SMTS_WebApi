@@ -1,18 +1,14 @@
-//(function () {
-//    "use strict";
+var appmain = angular.module("Container", ["ngRoute"]);
 
-//    var app = angular.module("Container",
-//                            []);
-
-//}());
-
-var app = angular.module("Container", ["ngRoute"]);
-
-app.config(function ($routeProvider) {
+appmain.config(function ($routeProvider) {
     $routeProvider
         .when("/home", {
             templateUrl: '/app/home/home.html',
-            controller: "HomeController"
+            controller: "homeController"
+        })
+        .when("/about", {
+            templateUrl: '/app/about/about.html',
+            controller: "aboutController"
         })
         .when("/contact", {
             templateUrl: '/app/contact/contact.html',

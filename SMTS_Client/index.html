@@ -19,22 +19,17 @@
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
-    <link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css">
-
-    <!-- CSS Theme -->
-    <link rel="stylesheet" href="assets/css/theme-colors/default.css">
-
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
 </head>
 
 <body ng-app="Container">
-    <div class="wrapper">
+    
+
+    <div class="wrapper" ng-controller="IndexController">
         <!--=== Header ===-->
         <div class="header">
             <!-- Topbar -->
@@ -606,35 +601,13 @@
             <!-- End Navbar -->
         </div>
         <!--=== End Header ===-->
-        <!--=== Slider ===-->
-        <!--<div class="slider-inner">
-            <div id="da-slider" class="da-slider">
-                <div class="da-slide">
-                    <h2><i>CLEAN &amp; FRESH</i> <br /> <i>FULLY RESPONSIVE</i> <br /> <i>DESIGN</i></h2>
-                    <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
-                    <div class="da-img"><img class="img-responsive" src="assets/plugins/parallax-slider/img/1.png" alt=""></div>
-                </div>
-                <div class="da-slide">
-                    <h2><i>RESPONSIVE VIDEO</i> <br /> <i>SUPPORT AND</i> <br /> <i>MANY MORE</i></h2>
-                    <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i></p>
-                    <div class="da-img">
-                        <iframe src="http://player.vimeo.com/video/47911018" width="530" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="da-slide">
-                    <h2><i>USING BEST WEB</i> <br /> <i>SOLUTIONS WITH</i> <br /> <i>HTML5/CSS3</i></h2>
-                    <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
-                    <div class="da-img"><img src="assets/plugins/parallax-slider/img/html5andcss3.png" alt="image01" /></div>
-                </div>
-                <div class="da-arrows">
-                    <span class="da-arrows-prev"></span>
-                    <span class="da-arrows-next"></span>
-                </div>
-            </div>
-        </div>--><!--/slider-->
-        <!--=== End Slider ===-->
-        <!--<div ng-include="'app/home/home.html'"></div>-->
+        
+       
         <ng-view></ng-view>
+        
+        </div>
+        
+
         <!--=== Footer Version 1 ===-->
         <div class="footer-v1">
             <div class="footer">
@@ -753,47 +726,31 @@
         </div>
         <!--=== End Footer Version 1 ===-->
     </div><!--/wrapper-->
-    <!-- JS Global Compulsory -->
-    <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-    <script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="assets/plugins/parallax-slider/js/modernizr.js"></script>
-    <script type="text/javascript" src="assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
-    <!-- JS Customization -->
-    <script type="text/javascript" src="assets/js/custom.js"></script>
-    <!-- JS Page Level -->
-    <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/plugins/parallax-slider.js"></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-      	App.init();
-        App.initSliders();
-        ParallaxSlider.initParallaxSlider();
-    });
-    </script>
-    <!--[if lt IE 9]>
-        <script src="assets/plugins/respond.js"></script>
-        <script src="assets/plugins/html5shiv.js"></script>
-        <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
-    <![endif]-->
+    
+    
 
+
+
+
+    
     <!-- Library Scripts -->
     <script src="scripts/angular.js"></script>
     <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
 
-
-
-
     <!-- Application Script -->
-    <script src="app/app.js"></script>
+    <script src="app/appmain.js"></script>
+
+    <!--home-->
     <script src="app/home/homeCtrl.js"></script>
     <script src="app/home/homeDrct.js"></script>
-    <script src="commen/homeService.js"></script>
+    <!--<script src="commen/homeService.js"></script>-->
 
+    <!--about-->
+    <script src="app/about/aboutDrct.js"></script>
+    <script src="app/about/aboutCtrl.js"></script>
+
+    <!--contact-->
     <script src="app/contact/contactCtrl.js"></script>
     <script src="app/contact/contactDrct.js"></script>
 
@@ -802,6 +759,10 @@
     <script src="commen/productResource.js"></script>
     <!-- Product Controllers -->
     <!--<script src="app/products/productListCtrl.js"></script>-->
+
+
+   
+    
 
 </body>
 </html>

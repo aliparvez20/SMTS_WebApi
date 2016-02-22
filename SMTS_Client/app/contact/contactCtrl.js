@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('ContactController', ['$scope', function ($scope) {
+appmain.controller('ContactController', ['$scope', function ($scope) {
 
 
 

@@ -99,6 +99,8 @@ E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.WebPages.Deployment.dll
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.WebPages.dll
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.WebPages.Razor.dll
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\WebGrease.dll
+E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\EntityFramework.xml
+E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\EntityFramework.SqlServer.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\Newtonsoft.Json.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Net.Http.Formatting.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.Http.xml
@@ -112,8 +114,6 @@ E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.WebPages.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.WebPages.Deployment.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\System.Web.WebPages.Razor.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\Antlr3.Runtime.pdb
-E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\EntityFramework.xml
-E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\EntityFramework.SqlServer.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\Microsoft.AspNet.Identity.Core.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\Microsoft.AspNet.Identity.Owin.xml
 E:\PROJECTS\SMTS\SMTS_WebApi\SMTS_WebApi\bin\Microsoft.AspNet.Identity.EntityFramework.xml

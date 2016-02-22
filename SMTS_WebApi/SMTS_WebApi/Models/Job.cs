@@ -14,6 +14,7 @@ namespace SMTS_WebApi.Models
         public string JobLocation { get; set; }
         public string JobDescription { get; set; }
         public DateTime? JobLastDate { get; set; }
+        public string JobProcess { get; set; }
         public string JobKeySkills { get; set; }
         public string JobSalary { get; set; }
         public string JobIndustry { get; set; }

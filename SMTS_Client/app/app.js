@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    var app = angular.module("productManagement",
-                            ["commen.service"]);
+    var app = angular.module("Container",
+                            []);
 
 }());

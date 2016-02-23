@@ -7,5 +7,9 @@ appmain.controller('HomeController', ['$scope', '$rootScope', '$route', function
 
 
     console.log("HomeController", $scope);
+
+
+    //$scope.script = "$(document).ready(function () {alert('HOME');App.init();App.initSliders();ParallaxSlider.initParallaxSlider();})"
+
 }]);
 

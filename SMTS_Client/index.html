@@ -39,20 +39,27 @@
 
         <header></header>
         <!--<div ng-include="'app/home/home.html'"></div>-->
+        <!--<ng-container></ng-container>-->
         <div ng-view></div>
         <footer></footer>
     </div><!--/wrapper-->
+
+    <!-- JS Global Compulsory -->	
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     
     <!-- Library Scripts -->
     <script src="scripts/angular.js"></script>
     <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
 
-
-
-
     <!-- Application Script -->
     <script src="app/appmain.js"></script>
+    <!--Container-->
+    <script src="app/pages/container/containerDrct.js"></script>
+    <script src="app/pages/container/containerCtrl.js"></script>
+
     <!--home-->
     <script src="app/pages/home/homeCtrl.js"></script>
     <script src="app/pages/home/homeDrct.js"></script>

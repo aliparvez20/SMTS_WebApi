@@ -1,5 +1,16 @@
 ﻿ <!--=== Slider ===-->
 <div ng-controller="HomeController">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
     <div class="slider-inner">
         <div id="da-slider" class="da-slider">
             <div class="da-slide">
@@ -308,14 +319,14 @@
         <!-- End Our Clients -->
     </div><!--/container-->
     <!-- End Content Part -->
-    <!--<div ng-html-bind="{{script}}"></div>-->
-
+    
+    <!-- JS Implementing Plugins -->
+   
     <script type="text/javascript">
         $(document).ready(function () {
-            alert("HOME");
-            //App.init();
-            //App.initSliders();
-            //ParallaxSlider.initParallaxSlider();
+            App.init();
+            App.initSliders();
+            ParallaxSlider.initParallaxSlider();
         });
     </script>
 

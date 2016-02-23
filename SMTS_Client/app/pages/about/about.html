@@ -464,13 +464,16 @@
         <!-- End Our Clients -->
 
     </div>
-    <!--=== Contact Us ===-->
-    <script type="text/javascript">
-    $(document).ready(function () {
-        alert("about");
-        
-    });
-    </script>
 
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            alert("about");
+            App.init();
+            App.initParallaxBg();
+            ContactPage.initMap();
+            OwlCarousel.initOwlCarousel();
+        });
+    </script>
 </div>
 

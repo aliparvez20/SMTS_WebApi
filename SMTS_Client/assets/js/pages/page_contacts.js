@@ -16,7 +16,7 @@ var ContactPage = function () {
                 var marker = map.addMarker({
                     lat: 22.556909,
                     lng: 88.357357,
-                    title: 'XXXXX'
+                    title: 'Sandhan ManPower and Training Solution'
                 });
             });
         },

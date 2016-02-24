@@ -5,7 +5,7 @@
         .module("commen.service")
         .factory("productResource", ["$resource", "appSettings",
             function ($resource, appSettings) {
-                return $resource(appSettings.serverPath + "/api/Products/:search");
+                //return $resource(appSettings.serverPath + "/api/Products/:search");
             }
         ]);
 

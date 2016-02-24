@@ -15,6 +15,10 @@ appmain.config(function ($routeProvider) {
             templateUrl: '/app/pages/about/about.html',
             controller: "AboutController"
         })
+        .when("/about/:message", {
+            templateUrl: '/app/pages/about/about.html',
+            controller: "AboutController"
+        })
         .when("/service", {
             templateUrl: '/app/pages/service/service.html',
             controller: "ServiceController"
@@ -44,3 +48,5 @@ appmain.controller('IndexController', ['$scope', '$location', function ($scope, 
     }
 
 }]);
+
+

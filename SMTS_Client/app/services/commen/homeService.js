@@ -1,4 +1,4 @@
-﻿appmain.factory('homeService', function () {
+﻿app.factory('homeService', function () {
     return {
 
 

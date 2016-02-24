@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-appmain.controller('AboutController', ['$scope', '$routeParams', function ($scope, $routeParams) {
+appmain.controller('AboutController', ['$scope', function ($scope) {
 
-    console.log("$routeParams.message", $routeParams.message);
+
 
 }]);

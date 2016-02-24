@@ -1,39 +1,4 @@
-﻿//(function () {
-//    "use strict";
-
-//    angular
-//        .module("commen.service")
-//        .factory("messageResource", ["$resource", "appSettings",
-//            function ($resource, appSettings, data) {
-//                //return $resource(appSettings.serverPath + "/api/Products/:search");
-//                console.log("messageResource");
-//                return {
-
-//                    //postMessage: function (data) {
-//                    //    alert("Posting");
-//                    //    $http.post(appSettings.serverPath + "/api/Message", data)
-//                    //    .then(function () {
-//                    //        //Sucess
-//                    //    }, function () {
-//                    //        //Error
-//                    //    })
-//                    //}
-//                }
-
-
-
-
-//            }
-//        ]);
-
-
-//}());
-
-
-
-'use strict';
-
-var serviceId = 'messageResource';
+﻿'use strict';
 
 appmain.factory('messageResource',
         ['$http', function ($http) {
@@ -71,3 +36,41 @@ function message(http) {
         //});
     }
 }
+
+
+
+
+//(function () {
+//    "use strict";
+
+//    angular
+//        .module("commen.service")
+//        .factory("messageResource", ["$resource", "appSettings",
+//            function ($resource, appSettings, data) {
+//                //return $resource(appSettings.serverPath + "/api/Products/:search");
+//                console.log("messageResource");
+//                return {
+
+//                    //postMessage: function (data) {
+//                    //    alert("Posting");
+//                    //    $http.post(appSettings.serverPath + "/api/Message", data)
+//                    //    .then(function () {
+//                    //        //Sucess
+//                    //    }, function () {
+//                    //        //Error
+//                    //    })
+//                    //}
+//                }
+
+
+
+
+//            }
+//        ]);
+
+
+//}());
+
+
+
+

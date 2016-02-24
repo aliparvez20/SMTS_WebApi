@@ -8,7 +8,7 @@ appmain.controller('ContactController', ['$scope', '$http', 'messageResource', f
     $scope.submitMessage = function () {
         conCtrl.message.date = new Date();
         console.log(conCtrl.message);
-        
+        messageResource.createUser();
 
         //$http.post("", conCtrl.message)
         //    .then(function () {

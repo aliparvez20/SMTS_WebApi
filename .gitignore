@@ -9,3 +9,12 @@ SMTS_WebApi/SMTS_WebApi/obj/Debug/SMTS_WebApi.csproj.FileListAbsolute.txt
 SMTS_WebApi/SMTS_WebApi/obj/Debug/SMTS_WebApi.pdb
 SMTS_WebApi/SMTS_WebApi/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 SMTS_WebApi/SMTS_WebApi/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+SMTS_WebApi/SMTS_WebApi/bin/SMTS_WebApi.dll
+*.dll
+SMTS_WebApi/SMTS_WebApi/bin/SMTS_WebApi.dll
+*.pdb
+SMTS_WebApi/SMTS_WebApi/obj/Debug/SMTS_WebApi.csproj.FileListAbsolute.txt
+SMTS_WebApi/SMTS_WebApi/Scripts/_references.js
+*.pdb
+SMTS_WebApi/SMTS_WebApi/obj/Debug/SMTS_WebApi.csprojResolveAssemblyReference.cache
+*.cache

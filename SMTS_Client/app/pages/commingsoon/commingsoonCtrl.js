@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-appmain.controller('AboutController', ['$scope', function ($scope) {
+appmain.controller('CommingSoonController', ['$scope', function ($scope) {
 
 
 

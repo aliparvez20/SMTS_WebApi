@@ -1,4 +1,4 @@
-﻿//appmain.directive('AboutDirective', function () {
+﻿//appmain.directive('CommingSoonDirective', function () {
 //    return {
 //        restrict: 'E',
 //        templateUrl: 'app/about/about.html'

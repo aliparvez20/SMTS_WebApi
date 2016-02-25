@@ -1,7 +1,11 @@
 ﻿'use strict';
 
-appmain.config(function ($routeProvider) {
+appmain.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: '/app/pages/home/home.html',
+            controller: 'HomeController'
+        })
         .when("/home", {
             templateUrl: '/app/pages/home/home.html',
             controller: "HomeController",
@@ -28,9 +32,9 @@ appmain.config(function ($routeProvider) {
             templateUrl: '/app/pages/commingsoon/commingsoon.html',
             controller: "CommingSoonController"
         })
-        .when("/errorpage", {
-            templateUrl: '/app/pages/about/about.html',
-            controller: "AboutController"
+        .when("/error", {
+            templateUrl: '/app/pages/errorpage/errorpage.html',
+            controller: "ErrorController"
         })
         .when("/gallary", {
             templateUrl: '/app/pages/service/service.html',
@@ -47,5 +51,69 @@ appmain.config(function ($routeProvider) {
         })
         .otherwise({
             redirectTo: "/home"
-        })
-});
+        });
+
+    // use the HTML5 History API
+    //$locationProvider.html5Mode(true);
+}]);
+
+//appmain.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+//    $urlRouterProvider.otherwise('/home');
+//    $stateProvider
+//        .state('home', {
+//            url: '/home',
+//            templateUrl: '/app/pages/home/home.html',
+//            controller: 'HomeController',
+//            paramExample: 'exampleA'
+//        })
+//        .state("contact", {
+//            url: '/contact',
+//            templateUrl: '/app/pages/contact/contact.html',
+//            controller: "ContactController"
+//        })
+//        .state("about", {
+//            url: '/about',
+//            templateUrl: '/app/pages/about/about.html',
+//            controller: "AboutController"
+//        })
+//       .state("service", {
+//           url: '/service',
+//           templateUrl: '/app/pages/service/service.html',
+//           controller: "ServiceController"
+//       })
+//       .state("client", {
+//           url: '/client',
+//           templateUrl: '/app/pages/client/client.html',
+//           controller: "ClientController",
+//           paramExample: 'exampleA'
+//       })
+//       .state("commingsoon", {
+//           url: '/commingsoon',
+//           templateUrl: '/app/pages/commingsoon/commingsoon.html',
+//           controller: "CommingSoonController"
+//       })
+//       .state("errorpage", {
+//           url: '/errorpage',
+//           templateUrl: '/app/pages/errorpage/errorpage.html',
+//           controller: "ErrorPageController"
+//       })
+//       .state("gallary", {
+//           url: '/gallary',
+//           templateUrl: '/app/pages/gallary/gallary.html',
+//           controller: "GallaryController"
+//       })
+//       .state("privacypolicy", {
+//           url: '/privacypolicy',
+//           templateUrl: '/app/pages/privacypolicy/privacypolicy.html',
+//           controller: "PrivacyPolicyController",
+           
+//       })
+//       .state("termsofservice", {
+//           url: '/termsofservice',
+//           templateUrl: '/app/pages/termsofservice/termsofservice.html',
+//           controller: "TermsOfServiceController"
+//       });
+
+//}]);
+
+

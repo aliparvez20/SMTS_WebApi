@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-appmain.controller('TermsofserviceController', ['$scope', function ($scope) {
+appmain.controller('TermsOfServiceController', ['$scope', function ($scope) {
 
 
 

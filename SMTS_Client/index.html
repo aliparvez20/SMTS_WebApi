@@ -6,7 +6,7 @@
 <!--<![endif]-->
 <head>
     <title>Sandhan</title>
-
+    <base href="/">
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,28 +26,25 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
     <link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css">
-
     <!-- CSS Theme -->
     <link rel="stylesheet" href="assets/css/theme-colors/default.css">
-
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
     <!--HOME-->
+
     <!--ABOUT-->
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="assets/css/pages/page_about.css">
-
     <!-- CSS Theme -->
     <link rel="stylesheet" href="assets/css/theme-colors/default.css">
-
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
     <!--ABOUT-->
+
     <!--CONTACT-->
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
@@ -60,6 +57,7 @@
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
     <!--CONTACT-->
+
     <!--COMMING SOON-->
     <!-- CSS Global Compulsory-->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
@@ -78,6 +76,26 @@
     <link rel="stylesheet" href="assets/css/theme-colors/default.css">
     <link rel="stylesheet" href="assets/css/themes/headers/default.css" id="style_color-header-1">  
     <!--COMMING SOON-->
+
+    <!--ERROR-->
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_404_error.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!--ERROR-->
+
+
+
+
+
 
 
 
@@ -148,9 +166,31 @@
         <script type="text/javascript" src="assets/js/app.js"></script>
         <!--COMMING SOON-->
 
+        <!--ERROR-->
+        <!-- JS Global Compulsory -->
+        <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <!-- JS Implementing Plugins -->
+        <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+        <!-- JS Customization -->
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+        <!-- JS Page Level -->
+        <script type="text/javascript" src="assets/js/app.js"></script>
+        <!--ERROR-->
+
+
+
+
+
+
+
+
+
 
         <header></header>
         <div ng-view></div>
+        <!--<div ui-view></div>-->
         <footer></footer>
 
     </div><!--/wrapper-->
@@ -158,12 +198,13 @@
     <script src="scripts/angular.js"></script>
     <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
 
     <!-- Application Script -->
     <script src="app/appmain.js"></script>
 
     <!--Index-->
-    <script src="app/IndexCtrl.js"></script>
+    <script src="app/indexCtrl.js"></script>
     <script src="app/appRoute.js"></script>
 
     <!--home-->
@@ -186,6 +227,36 @@
     <script src="app/pages/service/serviceCtrl.js"></script>
     <script src="app/pages/service/serviceDrct.js"></script>
 
+    <!--client-->
+    <script src="app/pages/client/clientCtrl.js"></script>
+    <script src="app/pages/client/clientDrct.js"></script>
+
+    <!--errorpage-->
+    <script src="app/pages/errorpage/errorpageCtrl.js"></script>
+    <script src="app/pages/errorpage/errorpageDrct.js"></script>
+
+    <!--gallary-->
+    <script src="app/pages/gallary/gallaryCtrl.js"></script>
+    <script src="app/pages/gallary/gallaryDrct.js"></script>
+    
+    <!--privacypolicy-->
+    <script src="app/pages/privacypolicy/privacypolicyCtrl.js"></script>
+    <script src="app/pages/privacypolicy/privacypolicyDrct.js"></script>
+
+    <!--service-->
+    <script src="app/pages/service/serviceCtrl.js"></script>
+    <script src="app/pages/service/serviceDrct.js"></script>
+
+    <!--termsofservice-->
+    <script src="app/pages/termsofservice/termsofserviceCtrl.js"></script>
+    <script src="app/pages/termsofservice/termsofserviceDrct.js"></script>
+
+
+
+
+
+
+
 
 
 
@@ -196,7 +267,6 @@
 
     <script src="app/ui/header/headerCtrl.js"></script>
     <script src="app/ui/header/headerDrct.js"></script>
-
 
     <!-- Services -->
     <script src="app/services/commen/commen.service.js"></script>

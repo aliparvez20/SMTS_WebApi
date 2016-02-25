@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-appmain.controller('AboutController', ['$scope', function ($scope) {
+appmain.controller('ClientController', ['$scope', function ($scope) {
 
 
 

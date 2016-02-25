@@ -50,7 +50,7 @@ appmain.config(["$routeProvider", "$locationProvider", function ($routeProvider,
             controller: "ContactController"
         })
         .otherwise({
-            redirectTo: "/home"
+           // redirectTo: "/home"
         });
 
     // use the HTML5 History API

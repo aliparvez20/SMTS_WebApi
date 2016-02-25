@@ -1,8 +1,15 @@
 ﻿'use strict';
 
-appmain.controller('ContactController', ['$scope', '$http', 'messageResource', function ($scope, $http, messageResource) {
+appmain.controller('ContactController', ['$scope', '$rootScope', '$http', 'messageResource', function ($scope,$rootScope, $http, messageResource) {
 
     var conCtrl = this;
+    $rootScope.menu = {
+        home: "",
+        about: "",
+        blog: "",
+        contact: "active",
+    }
+    
 
 
     $scope.submitMessage = function () {

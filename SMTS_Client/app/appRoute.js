@@ -1,6 +1,12 @@
 ﻿'use strict';
 
-appmain.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function ($routeProvider, $locationProvider, $httpProvider) {
+    $httpProvider.defaults.headers.common = {};
+    $httpProvider.defaults.headers.post = {};
+    $httpProvider.defaults.headers.put = {};
+    $httpProvider.defaults.headers.patch = {};
+
+
     $routeProvider
         .when('/', {
             templateUrl: '/app/pages/home/home.html',

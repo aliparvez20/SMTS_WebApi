@@ -7,8 +7,28 @@ appmain.factory('messageResource',
 
 function message(http) {
     this.http = http;
-    this.createUser = function (user, scope) {
-        console.log("this.createUser")
+    this.createUser = function (message, scope) {
+        console.log("this.createUser", message);
+
+        //http.post("http://localhost:49528/api/Message", message)
+        //   .then(function () {
+        //       //Sucess
+        //   }, function () {
+
+        //   })
+
+
+
+        http({
+            method: 'POST',
+            url: 'http://localhost:49528/api/Message'
+        }).then(function successCallback(response, message) {
+            
+        }, function errorCallback(response) {
+
+        });
+
+
         // 
         // Save Action Method
         //

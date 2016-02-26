@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    angular.module("commen.service", ["ngResource"])
+    appmain
         .constant("appSettings", {
             serverPath: "http://localhost:49528/"
         });

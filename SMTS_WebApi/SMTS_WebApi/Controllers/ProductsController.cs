@@ -9,7 +9,7 @@ using System.Web.Http.Cors;
 
 namespace SMTS_WebApi.Controllers
 {
-    [EnableCorsAttribute("http://localhost:49531", "*", "*")]
+    [EnableCorsAttribute("http://localhost:49528", "*", "*")]
     public class ProductsController : ApiController
     {
         // GET: api/Products

@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SMTS_WebApi.Controllers
 {
+    [EnableCors(origins: "http://localhost:49528", headers: "*", methods: "*")]
     public class MessageController : ApiController
     {
         static readonly IMessageRepository repository = new MessageRespository();

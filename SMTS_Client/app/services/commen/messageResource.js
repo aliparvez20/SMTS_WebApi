@@ -1,95 +1,49 @@
 ﻿'use strict';
 
 appmain.factory('messageResource',
-        ['$http', function ($http) {
-            return new message($http);
+        ['$http', 'config', function ($http, config) {
+            return new message($http, config);
         }]);
 
-function message(http) {
+function message(http, config) {
     this.http = http;
-    this.createUser = function (message, scope) {
-        console.log("this.createUser", message);
+    this.config = config
 
-        //http.post("http://localhost:49528/api/Message", message)
-        //   .then(function () {
-        //       //Sucess
-        //   }, function () {
-
-        //   })
-
-
-
+    this.sentMessage = function (data, scope) {
+        console.log("this.createUser", config.apiUrl);
         http({
             method: 'POST',
-            url: 'http://localhost:49528/api/Message'
-        }).then(function successCallback(response, message) {
+            url: config.apiUrl + 'api/Message',
+            
+        }).then(function successCallback(data, response) {
             
         }, function errorCallback(response) {
 
         });
-
-
-        // 
-        // Save Action Method
-        //
-        //var User = resource('/users/new');
-        //User.save(user, function (response) {
-        //    scope.message = response.message;
-        //});
     }
-    this.getUser = function (id, scope) {
-        //
-        // GET Action Method
-        //
-        //var User = resource('/users/:userId', { userId: '@userId' });
-        //User.get({ userId: id }, function (user) {
-        //    scope.user = user;
-        //})
+
+    this.readMessage = function (id, scope) {
+      
+        $http({ method: 'GET', url: config.apiUrl + 'api/Message' }).
+               success(function (data, ) {
+                   
+               }).
+               error(function (data, status, headers, config) {
+                   
+               });
+
     }
-    this.getUsers = function (scope) {
-        //
-        // Query Action Method
-        //
-        //var Users = resource('/users/all');
-        //Users.query(function (users) {
-        //    scope.users = users;
-        //});
+
+    this.deleteMessage = function(id, scope){
+    
+    
+    
     }
 }
 
 
 
 
-//(function () {
-//    "use strict";
-
-//    angular
-//        .module("commen.service")
-//        .factory("messageResource", ["$resource", "appSettings",
-//            function ($resource, appSettings, data) {
-//                //return $resource(appSettings.serverPath + "/api/Products/:search");
-//                console.log("messageResource");
-//                return {
-
-//                    //postMessage: function (data) {
-//                    //    alert("Posting");
-//                    //    $http.post(appSettings.serverPath + "/api/Message", data)
-//                    //    .then(function () {
-//                    //        //Sucess
-//                    //    }, function () {
-//                    //        //Error
-//                    //    })
-//                    //}
-//                }
-
-
-
-
-//            }
-//        ]);
-
-
-//}());
 
 
 

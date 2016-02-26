@@ -14,7 +14,7 @@ appmain.controller('ContactController', ['$scope', '$rootScope', '$http', 'messa
 
     $scope.submitMessage = function () {
         conCtrl.message.date = new Date();
-        messageResource.createUser(conCtrl.message);
+        messageResource.sentMessage(conCtrl.message);
 
         //$http.post("", conCtrl.message)
         //    .then(function () {

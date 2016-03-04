@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sandhan.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SandhanStoreContainer">
+    <EntitySet Name="Processes" EntityType="Sandhan.Store.Processes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="Sandhan.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Qualifications" EntityType="Sandhan.Store.Qualifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Sandhan.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Jobs" EntityType="Sandhan.Store.Jobs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="Sandhan.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="JobLocation" Association="Sandhan.Store.JobLocation">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="JobProcess" Association="Sandhan.Store.JobProcess">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Process" EntitySet="Processes" />
+    </AssociationSet>
+    <AssociationSet Name="JobQualification" Association="Sandhan.Store.JobQualification">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Qualification" EntitySet="Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="JobUser" Association="Sandhan.Store.JobUser">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Processes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcessName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Qualifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QualificationName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RequiredYearExperience" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastDate" Type="datetime" Nullable="false" />
+    <Property Name="KeySkills" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Industry" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FunctionalArea" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Role" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CompanyProfile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime" Nullable="false" />
+    <Property Name="CompanyImage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="ProcessId" Type="int" Nullable="false" />
+    <Property Name="QualificationId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="messageName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="messageEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="messageBody" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="messageDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="JobLocation">
+    <End Role="Job" Type="Sandhan.Store.Jobs" Multiplicity="*" />
+    <End Role="Location" Type="Sandhan.Store.Locations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobProcess">
+    <End Role="Job" Type="Sandhan.Store.Jobs" Multiplicity="*" />
+    <End Role="Process" Type="Sandhan.Store.Processes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Process">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobQualification">
+    <End Role="Job" Type="Sandhan.Store.Jobs" Multiplicity="*" />
+    <End Role="Qualification" Type="Sandhan.Store.Qualifications" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Qualification">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="QualificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobUser">
+    <End Role="Job" Type="Sandhan.Store.Jobs" Multiplicity="*" />
+    <End Role="User" Type="Sandhan.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

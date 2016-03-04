@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="34426ef3145349aa94654333111c56ba" Name="Diagram1" >
+        <EntityTypeShape EntityType="Sandhan.Process" Width="1.5" PointX="0.875" PointY="1.375" />
+        <EntityTypeShape EntityType="Sandhan.Location" Width="1.5" PointX="0.875" PointY="3" />
+        <EntityTypeShape EntityType="Sandhan.Qualification" Width="1.5" PointX="0.875" PointY="4.625" />
+        <EntityTypeShape EntityType="Sandhan.User" Width="1.5" PointX="0.875" PointY="6.25" />
+        <EntityTypeShape EntityType="Sandhan.Job" Width="1.5" PointX="4" PointY="1.375" />
+        <AssociationConnector Association="Sandhan.JobLocation" />
+        <AssociationConnector Association="Sandhan.JobProcess" />
+        <AssociationConnector Association="Sandhan.JobQualification" />
+        <AssociationConnector Association="Sandhan.JobUser" />
+        <EntityTypeShape EntityType="Sandhan.Message" Width="1.5" PointX="9.375" PointY="2.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

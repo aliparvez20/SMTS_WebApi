@@ -30,6 +30,6 @@ namespace SMTS_WebApi.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<SMTS_WebApi.Models.Job> Jobs { get; set; }
+     
     }
 }

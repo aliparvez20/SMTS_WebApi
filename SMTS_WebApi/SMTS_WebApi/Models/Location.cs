@@ -24,9 +24,9 @@ namespace SMTS_WebApi.Models
             this.Jobs = new HashSet<Job>();
         }
 
-        //[Key] 
+        [Key] 
         public int Id { get; set; }
-        //[DataMember]
+        [DataMember]
         public string LocationName { get; set; }
 
 

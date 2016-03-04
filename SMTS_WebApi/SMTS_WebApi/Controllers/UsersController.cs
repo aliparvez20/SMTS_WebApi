@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SMTS_WebApi.Models;
+using System.Web.Http.Cors;
 
 namespace SMTS_WebApi.Controllers
 {
+    [EnableCors(origins: "http://localhost:49528", headers: "*", methods: "*")]
     public class UsersController : ApiController
     {
         private SandhanContainer db = new SandhanContainer();

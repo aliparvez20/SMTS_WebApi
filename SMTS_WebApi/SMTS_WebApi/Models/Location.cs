@@ -9,19 +9,30 @@
 
 namespace SMTS_WebApi.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
+
+    [DataContract(IsReference = true)] 
+    //[JsonObject(IsReference = true)] 
     public partial class Location
     {
         public Location()
         {
             this.Jobs = new HashSet<Job>();
         }
-    
+
+        //[Key] 
         public int Id { get; set; }
+        //[DataMember]
         public string LocationName { get; set; }
-    
+
+
+        //[JsonIgnore]
+        //[IgnoreDataMember] 
+         
         public virtual ICollection<Job> Jobs { get; set; }
     }
 }

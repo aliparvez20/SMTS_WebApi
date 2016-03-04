@@ -9,8 +9,10 @@
 
 namespace SMTS_WebApi.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     
     public partial class Qualification
     {
@@ -21,7 +23,9 @@ namespace SMTS_WebApi.Models
     
         public int Id { get; set; }
         public string QualificationName { get; set; }
-    
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<Job> Jobs { get; set; }
     }
 }

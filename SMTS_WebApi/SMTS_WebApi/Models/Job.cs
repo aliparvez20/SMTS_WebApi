@@ -9,8 +9,10 @@
 
 namespace SMTS_WebApi.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     
     public partial class Job
     {
@@ -28,9 +30,18 @@ namespace SMTS_WebApi.Models
         public string CompanyProfile { get; set; }
         public System.DateTime PostedDate { get; set; }
         public string CompanyImage { get; set; }
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public int LocationId { get; set; }
+        [JsonIgnore]
+        [IgnoreDataMember]
         public int ProcessId { get; set; }
+        [JsonIgnore]
+        [IgnoreDataMember]
         public int QualificationId { get; set; }
+        [JsonIgnore]
+        [IgnoreDataMember]
         public int UserId { get; set; }
     
         public virtual Location Location { get; set; }

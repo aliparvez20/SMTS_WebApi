@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,13 @@ namespace SMTS_WebApi
             {
                 Response.Flush();
             }
+        }
+
+        public static void ConfigureApi(HttpConfiguration config)
+        {
+            var json = config.Formatters.JsonFormatter;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
         protected void Application_Start()
         {

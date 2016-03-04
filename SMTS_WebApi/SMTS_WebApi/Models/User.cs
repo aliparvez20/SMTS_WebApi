@@ -9,8 +9,10 @@
 
 namespace SMTS_WebApi.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     
     public partial class User
     {
@@ -25,7 +27,10 @@ namespace SMTS_WebApi.Models
         public string Password { get; set; }
         public string Mobile { get; set; }
         public bool IsAdmin { get; set; }
-    
+
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<Job> Jobs { get; set; }
     }
 }

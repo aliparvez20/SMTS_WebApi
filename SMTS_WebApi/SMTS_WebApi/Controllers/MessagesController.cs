@@ -10,6 +10,10 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using SMTS_WebApi.Models;
 using System.Web.Http.Cors;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Collections;
 
 namespace SMTS_WebApi.Controllers
 {
@@ -74,16 +78,15 @@ namespace SMTS_WebApi.Controllers
 
         // POST: api/Messages
         [ResponseType(typeof(Message))]
-        public IHttpActionResult PostMessage(Message message)
+        public IHttpActionResult PostMessage(string data)
         {
+            Message message = JsonConvert.DeserializeObject<Message>(data);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
             db.Messages.Add(message);
             db.SaveChanges();
-
             return CreatedAtRoute("DefaultApi", new { id = message.Id }, message);
         }
 

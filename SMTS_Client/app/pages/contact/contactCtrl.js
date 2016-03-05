@@ -13,16 +13,12 @@ appmain.controller('ContactController', ['$scope', '$rootScope', '$http', 'messa
 
 
     $scope.submitMessage = function () {
-        conCtrl.message.date = new Date();
+        conCtrl.message.messageDate = new Date();
         //messageResource.sentMessage(conCtrl.message);
-        console.log("messageResource.readAllMessage", messageResource.readMessageById(1))
-        //$http.post("", conCtrl.message)
-        //    .then(function () {
-        //        //Sucess
-        //    }, function () {
-        //        //Error
-        //    })
-
+        messageResource.deleteMessage(4);
+        
+       
+        
     }
 
 }]);

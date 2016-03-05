@@ -14,7 +14,7 @@
                     <label for="name">Name</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control" name="name" ng-model="conCtrl.message.name" required ng-minlength="5">
+                            <input type="text" class="form-control" name="name" ng-model="conCtrl.message.messageName" required ng-minlength="5">
                             <span ng-show="newMessageFrom.name.$error.required" class="text-warning">Name is required</span>
                             <span ng-show="newMessageFrom.name.$error.minlength" class="text-warning">Name should be atleast 5 characters</span>
                         </div>
@@ -23,14 +23,14 @@
                     <label for="email">Email <span class="color-red">*</span></label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control" name="email" ng-model="conCtrl.message.emailAddress" required>
+                            <input type="text" class="form-control" name="email" ng-model="conCtrl.message.messageEmail" required>
                         </div>
                     </div>
 
                     <label for="message">Message</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-11 col-md-offset-0">
-                            <textarea rows="8" class="form-control" name="message" ng-model="conCtrl.message.message" required></textarea>
+                            <textarea rows="8" class="form-control" name="message" ng-model="conCtrl.message.messageBody" required></textarea>
                         </div>
                     </div>
 

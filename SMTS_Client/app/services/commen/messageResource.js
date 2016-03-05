@@ -10,22 +10,27 @@ function message(http, templateCache, q, config) {
     var _templateCache = templateCache
     var defer = q.defer();
     var _config = config
-    var _url = config.apiUrl + 'api/Message'
+    var _url = config.apiUrl + 'api/Messages'
     var status = null;
-    var data = null;
+    var _data = null;
 
 
     this.sentMessage = function (data, scope) {
-        console.log("this.createUser", config.apiUrl);
-        //http({
-        //    method: 'POST',
-        //    url: config.apiUrl + 'api/Message'
 
-        //}).then(function successCallback(data, response) {
-
-        //}, function errorCallback(response) {
-
-        //});
+        _data = JSON.stringify(data);
+        console.log("this.createUser", _data);
+        _http({
+            method: 'POST',
+            url: _url,
+            params: { data: _data }
+            
+        }).
+        then(function (response) {
+            var success = response;
+            console.log("SUCESS", response);
+        }, function (response) {
+            console.log("FAILED", response);
+        });
     }
 
     this.readAllMessage = function () {
@@ -33,24 +38,13 @@ function message(http, templateCache, q, config) {
         _http({ method: 'GET', url: _url, cache: _templateCache }).
         then(function (response) {
             status = response.status;
-            data = response.data;
-            defer.resolve(data);
+            _data = response.data;
+            defer.resolve(_data);
         }, function (response) {
-            data = response.data || "Request failed";
+            _data = response.data || "Request failed";
             status = response.status;
         });
         return defer.promise;
-
-
-
-        //_http({ method: 'GET', url: config.apiUrl + 'api/Message' }).
-        //       success(function (request, response) {
-
-        //       }).
-        //       error(function (request, response) {
-
-        //       });
-
     }
 
     this.readMessageById = function (id) {
@@ -58,18 +52,25 @@ function message(http, templateCache, q, config) {
         _http({ method: 'GET', url: _url, cache: _templateCache, params: { id: _id }})
             .then(function (response) {
                 status = response.status;
-                data = response.data;
-                defer.resolve(data);
+                _data = response.data;
+                defer.resolve(_data);
             }, function (response) {
-                data = response.data || "Request failed";
+                _data = response.data || "Request failed";
                 status = response.status;
             });
         return defer.promise;
 
     }
 
-    this.deleteMessage = function(id, scope){
-
+    this.deleteMessage = function(id){
+         var _id = id;
+        _http({ method: 'DELETE', url: _url, cache: _templateCache, params: { id: _id } })
+            .then(function (response) {
+                
+            }, function (response) {
+                
+            });
+        return defer.promise;
     }
 }
 

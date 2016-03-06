@@ -63,14 +63,19 @@ function message(http, templateCache, q, config) {
     }
 
     this.deleteMessage = function(id){
-         var _id = id;
-        _http({ method: 'DELETE', url: _url, cache: _templateCache, params: { id: _id } })
-            .then(function (response) {
-                
-            }, function (response) {
-                
-            });
-        return defer.promise;
+         //var _id = id;
+         //_http({ method: 'DELETE', url: _url, cache: _templateCache, params: { id: '1' }})
+         //   .then(function (response) {
+         //       status = response.status;
+         //       _data = response.data;
+         //       defer.resolve(_data);
+         //       console.log("DELETE SUCESS");
+         //   }, function (response) {
+         //       _data = response.data || "Request failed";
+         //       status = response.status;
+         //       console.log("DELETE failed", response);
+         //   });
+         //return defer.promise;
     }
 }
 

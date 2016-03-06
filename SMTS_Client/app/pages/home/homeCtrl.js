@@ -2,7 +2,7 @@
 
 appmain.controller('HomeController', ['$scope', '$rootScope', '$controller', '$route', function ($scope, $rootScope, $controller, $route) {
 
-    
+    alert(1);
     
     $rootScope.menu = {
         home: "active",

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Sandhan" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="SandhanContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Processes" EntityType="Sandhan.Process" />
+    <EntitySet Name="Locations" EntityType="Sandhan.Location" />
+    <EntitySet Name="Qualifications" EntityType="Sandhan.Qualification" />
+    <EntitySet Name="Users" EntityType="Sandhan.User" />
+    <EntitySet Name="Jobs" EntityType="Sandhan.Job" />
+    <AssociationSet Name="JobLocation" Association="Sandhan.JobLocation">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="JobProcess" Association="Sandhan.JobProcess">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Process" EntitySet="Processes" />
+    </AssociationSet>
+    <AssociationSet Name="JobQualification" Association="Sandhan.JobQualification">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Qualification" EntitySet="Qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="JobUser" Association="Sandhan.JobUser">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="Messages" EntityType="Sandhan.Message" />
+  </EntityContainer>
+  <EntityType Name="Process">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Jobs" Relationship="Sandhan.JobProcess" FromRole="Process" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Jobs" Relationship="Sandhan.JobLocation" FromRole="Location" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QualificationName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Jobs" Relationship="Sandhan.JobQualification" FromRole="Qualification" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Jobs" Relationship="Sandhan.JobUser" FromRole="User" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RequiredYearExperience" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LastDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KeySkills" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Salary" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Industry" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FunctionalArea" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CompanyProfile" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CompanyImage" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Location" Relationship="Sandhan.JobLocation" FromRole="Job" ToRole="Location" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Process" Relationship="Sandhan.JobProcess" FromRole="Job" ToRole="Process" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Qualification" Relationship="Sandhan.JobQualification" FromRole="Job" ToRole="Qualification" />
+    <Property Name="QualificationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Sandhan.JobUser" FromRole="Job" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="JobLocation">
+    <End Type="Sandhan.Job" Role="Job" Multiplicity="*" />
+    <End Type="Sandhan.Location" Role="Location" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobProcess">
+    <End Type="Sandhan.Job" Role="Job" Multiplicity="*" />
+    <End Type="Sandhan.Process" Role="Process" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Process">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobQualification">
+    <End Type="Sandhan.Job" Role="Job" Multiplicity="*" />
+    <End Type="Sandhan.Qualification" Role="Qualification" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Qualification">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="QualificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobUser">
+    <End Type="Sandhan.Job" Role="Job" Multiplicity="*" />
+    <End Type="Sandhan.User" Role="User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="messageName" Type="String" Nullable="false" />
+    <Property Name="messageEmail" Type="String" Nullable="false" />
+    <Property Name="messageBody" Type="String" Nullable="false" />
+    <Property Name="messageDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+</Schema>

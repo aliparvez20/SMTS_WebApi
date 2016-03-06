@@ -8,10 +8,10 @@ appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function
 
 
     $routeProvider
-        .when('/', {
-            templateUrl: '/app/pages/home/home.html',
-            controller: 'HomeController'
-        })
+        //.when('/', {
+        //    templateUrl: '/app/pages/home/home.html',
+        //    controller: 'HomeController'
+        //})
         .when("/home", {
             templateUrl: '/app/pages/home/home.html',
             controller: "HomeController",
@@ -33,6 +33,10 @@ appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function
             templateUrl: '/app/pages/home/home.html',
             controller: "HomeController",
             paramExample: 'exampleA'
+        })
+        .when("/jobs", {
+            templateUrl: '/app/pages/jobpage/jobpage.html',
+            controller: "JobPageController"
         })
         .when("/commingsoon", {
             templateUrl: '/app/pages/commingsoon/commingsoon.html',
@@ -56,7 +60,7 @@ appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function
             controller: "ContactController"
         })
         .otherwise({
-           // redirectTo: "/home"
+             redirectTo: "/home"
         });
 
     // use the HTML5 History API
@@ -112,7 +116,7 @@ appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function
 //           url: '/privacypolicy',
 //           templateUrl: '/app/pages/privacypolicy/privacypolicy.html',
 //           controller: "PrivacyPolicyController",
-           
+
 //       })
 //       .state("termsofservice", {
 //           url: '/termsofservice',

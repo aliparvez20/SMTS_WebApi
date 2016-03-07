@@ -2,7 +2,7 @@
 
 appmain.controller('ContactController', ['$scope', '$rootScope', '$http', 'messageResource', function ($scope,$rootScope, $http, messageResource) {
 
-    var conCtrl = this;
+
     $rootScope.menu = {
         home: "",
         about: "",
@@ -13,7 +13,7 @@ appmain.controller('ContactController', ['$scope', '$rootScope', '$http', 'messa
 
 
     $scope.submitMessage = function () {
-        conCtrl.message.messageDate = new Date();
+        $scope.message.messageDate = new Date();
         //messageResource.sentMessage(conCtrl.message);
         messageResource.deleteMessage(4);
         

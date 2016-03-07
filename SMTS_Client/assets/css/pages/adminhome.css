@@ -1,0 +1,4 @@
+﻿.tableDateH table    {width:100%;}
+.tableDateH table th {font-size:13px; font-weight:normal; text-align:left; color:#ffffff; padding:5px; letter-spacing:1px; background:#3598d9;}
+.tableDateH table th a {font-size:13px; font-weight:normal; text-align:left; color:#ffffff; / border:solid 1px #ffffff; / padding:5px; letter-spacing:1px; background:#3598d9; text-decoration:none;}
+.tableDateH table tr:nth-child(even) {font-size:12px; text-align:left; color:#000; background:#87CEFA;}

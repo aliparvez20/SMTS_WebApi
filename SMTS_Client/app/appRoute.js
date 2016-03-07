@@ -59,6 +59,14 @@ appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function
             templateUrl: 'app/pages/contact/contact.html',
             controller: "ContactController"
         })
+        .when("/adminlogin", {
+            templateUrl: 'app/pages/adminlogin/adminlogin.html',
+            controller: "AdminLoginController"
+        })
+        .when("/adminhome", {
+            templateUrl: 'app/pages/adminhome/adminhome.html',
+            controller: "AdminHomeController"
+        })
         .otherwise({
              redirectTo: "/home"
         });

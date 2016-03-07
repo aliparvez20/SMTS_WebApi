@@ -8,7 +8,7 @@ appmain.controller('JobPageController', ['$scope', '$rootScope', 'jobServices', 
         console.log($scope.jobs);
     },
     function (errorPayload) {
-        $log.error('failure loading movie', errorPayload);
+        
     });
     
     

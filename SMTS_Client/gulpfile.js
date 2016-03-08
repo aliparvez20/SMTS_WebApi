@@ -6,7 +6,7 @@ var del = require('del');
 
 var config = {
     //Include all js files but exclude any min.js files
-    src: [ 'app/**/*.js', '!app/**/*.min.js', 'assets/js/*.js']
+    src: [ 'app/*.js', 'app/**/*.js']
 }
 
 //delete the output file(s)

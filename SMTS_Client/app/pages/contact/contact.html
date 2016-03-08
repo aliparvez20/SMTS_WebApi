@@ -25,23 +25,28 @@
                     <label for="name">Name</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control" name="name" ng-model="message.messageName" required ng-minlength="5">
-                            <span ng-show="newMessageFrom.name.$error.required" class="text-warning">Name is required</span>
-                            <span ng-show="newMessageFrom.name.$error.minlength" class="text-warning">Name should be atleast 5 characters</span>
+                            <input type="text" class="form-control" name="name" ng-model="conCtrl.message.messageName" required ng-minlength="5">
+                            <span ng-show="newMessageFrom.name.$dirty && newMessageFrom.name.$error.required" class="text-warning">Name is required</span>
+                            <span ng-show="newMessageFrom.name.$dirty && newMessageFrom.name.$error.minlength" class="text-warning">Name should be atleast 5 characters</span>
                         </div>
                     </div>
 
-                    <label for="email">Email <span class="color-red">*</span></label>
+                    <label for="email">Email</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control" name="email" ng-model="message.messageEmail" required>
+                            <input type="email" class="form-control" name="email" id="email" ng-model="conCtrl.message.messageEmail" required>
+                            <span ng-show="newMessageFrom.email.$dirty && newMessageFrom.email.$error.required" class="text-warning">Email is required</span>
+                            <span ng-show="newMessageFrom.email.$dirty && newMessageFrom.email.$error.email" class="text-warning">Invalid Email</span>
                         </div>
                     </div>
 
                     <label for="message">Message</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-11 col-md-offset-0">
-                            <textarea rows="8" class="form-control" name="message" ng-model="message.messageBody" required></textarea>
+                            <textarea rows="8" class="form-control" name="message" ng-model="conCtrl.message.messageBody" required ng-trim="false" ng-minlength="100"></textarea>
+                            <span ng-show="newMessageFrom.message.$dirty && newMessageFrom.message.$error.required" class="text-warning">Text is required</span>
+                            <span ng-show="newMessageFrom.message.$dirty && newMessageFrom.message.$error.minlength" class="text-warning">Text should be atleast 100 characters</span>
+                            <span style="display:inline-block; float:right; color:red" ng-show="newMessageFrom.message.$dirty && newMessageFrom.message.$error.minlength">too short!</span>
                         </div>
                     </div>
 

@@ -1,12 +1,17 @@
 ﻿// include plug-ins
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var del = require('del');
 
+
+
+
+
 var config = {
     //Include all js files but exclude any min.js files
-    src: ['app/*.js', 'app/**/*.js', 'app/**/**/*.js', 'app/ui/**/*.js']
+    src: ['app/*.js', 'app/**/*.js', 'app/**/**/*.js', 'app/**/**/*.js']
 }
 
 //delete the output file(s)
@@ -30,11 +35,11 @@ gulp.task('scripts', ['clean'], function () {
 
 
 //For minifying style sheet
-//gulp.task("minstyle", function () {
-//    return gulp.src('./dist/css/style.min.css')
-//        .pipe(minifycss())
-//        .pipe(gulp.dest('./dist/css/'));
-//});
+gulp.task('minify-css', function () {
+    return gulp.src('styles/*.css')
+      .pipe(cleanCSS({ compatibility: 'ie8' }))
+      .pipe(gulp.dest('dist'));
+});
 
 gulp.task('watch', function () {
     return gulp.watch(config.src, ['scripts']);

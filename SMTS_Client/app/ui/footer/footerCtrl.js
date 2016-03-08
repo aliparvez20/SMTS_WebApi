@@ -2,6 +2,6 @@
 
 appmain.controller('FooterController', ['$scope', function ($scope) {
 
-
+    
 
 }]);

@@ -8,5 +8,6 @@ appmain.controller('AboutController', ['$scope', '$rootScope', function ($scope,
         blog: "",
         contact: "",
     }
+    
 
 }]);

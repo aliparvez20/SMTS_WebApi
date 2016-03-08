@@ -6,7 +6,7 @@ var del = require('del');
 
 var config = {
     //Include all js files but exclude any min.js files
-    src: [ 'app/*.js', 'app/**/*.js']
+    src: ['app/*.js', 'app/**/*.js', 'app/**/**/*.js', 'app/ui/**/*.js']
 }
 
 //delete the output file(s)
@@ -14,7 +14,7 @@ gulp.task('clean', function () {
     //del is an async function and not a gulp plugin (just standard nodejs)
     //It returns a promise, so make sure you return that from this task function
     //  so gulp knows when the delete is complete
-    return del(['app/all.min.js']);
+    return del(['build/all.min.js']);
 });
 
 // Combine and minify all files from the app folder
@@ -25,8 +25,16 @@ gulp.task('scripts', ['clean'], function () {
     return gulp.src(config.src)
       .pipe(uglify())
       .pipe(concat('all.min.js'))
-      .pipe(gulp.dest('app/'));
+      .pipe(gulp.dest('build/'));
 });
+
+
+//For minifying style sheet
+//gulp.task("minstyle", function () {
+//    return gulp.src('./dist/css/style.min.css')
+//        .pipe(minifycss())
+//        .pipe(gulp.dest('./dist/css/'));
+//});
 
 gulp.task('watch', function () {
     return gulp.watch(config.src, ['scripts']);

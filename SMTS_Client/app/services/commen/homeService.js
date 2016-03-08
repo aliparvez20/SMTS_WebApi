@@ -1,6 +1,6 @@
-﻿appmain.factory('homeService', function () {
+﻿appmain.factory('homeService', [function () {
     return {
 
 
     }
-});
+}]);

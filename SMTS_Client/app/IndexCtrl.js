@@ -18,4 +18,5 @@ appmain.controller('IndexController', ['$scope', '$location', function ($scope, 
         $location.path("/about");
     }
 
+
 }]);

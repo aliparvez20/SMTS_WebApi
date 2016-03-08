@@ -68,7 +68,7 @@ appmain.config(["$routeProvider", "$locationProvider", "$httpProvider", function
             controller: "AdminHomeController"
         })
         .otherwise({
-             redirectTo: "/home"
+            // redirectTo: "/home"
         });
 
     // use the HTML5 History API

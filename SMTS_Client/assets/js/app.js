@@ -92,6 +92,7 @@ var App = function () {
 
         //Clients Logo
         initSliders: function () {
+            
             jQuery('#clients-flexslider').flexslider({
                 animation: "slide",
                 easing: "swing",

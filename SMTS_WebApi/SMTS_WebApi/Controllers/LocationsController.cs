@@ -13,7 +13,8 @@ using System.Web.Http.Cors;
 
 namespace SMTS_WebApi.Controllers
 {
-    [EnableCors(origins: "http://localhost:49528", headers: "*", methods: "*")]
+    //[EnableCors(origins: "http://localhost:49528", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://api.sandhan.co", headers: "*", methods: "*")]
     public class LocationsController : ApiController
     {
         private SandhanContainer db = new SandhanContainer();

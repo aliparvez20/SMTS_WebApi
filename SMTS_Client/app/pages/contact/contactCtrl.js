@@ -10,13 +10,13 @@ appmain.controller('ContactController', ['$scope', '$rootScope', '$http', 'messa
         contact: "active",
     }
     
-
+    $scope.google = "XXXXX";
 
     $scope.submitMessage = function () {
-        $scope.message.messageDate = new Date();
+        //$scope.message.messageDate = new Date();
         //messageResource.sentMessage(conCtrl.message);
-        messageResource.deleteMessage(4);
-        
+        //messageResource.deleteMessage(4);
+        console.log(messageResource.readAllMessage());
        
         
     }

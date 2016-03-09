@@ -1,7 +1,6 @@
 ﻿<div>
 
     <!--CONTACT-->
-  
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
@@ -10,7 +9,6 @@
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="assets/css/pages/page_contact.css">
     <!--CONTACT-->
-
     <!-- Google Map -->
     <div id="map" class="map">
     </div><!---/map-->
@@ -22,7 +20,8 @@
                 <div class="headline"><h2>Contact Us</h2></div>
                 <p>For information on SANDHAN MANPOWER & TRAINING SOLUTION, or to provide feedback about this website, please contact us today. We look forward to hearing from you, and THANK YOU in advance for your interest in SANDHAN !</p><br />
                 <form novalidate name="newMessageFrom">
-                    <label for="name">Name</label>
+
+                    <label for="name">Name{{google}}</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
                             <input type="text" class="form-control" name="name" ng-model="conCtrl.message.messageName" required ng-minlength="5">
